@@ -1,13 +1,13 @@
 package entity
 
-sealed class Result {
-    data class Success(val value: Any) : Result()
-    data class Error(val message: String) : Result()
+sealed class Results {
+    data class Success(val value: Any) : Results()
+    data class Error(val message: String) : Results()
 }
 
-fun processResult(result: Result) {
+fun processResult(result: Results) {
     when (result) {
-        is Result.Success -> println("Success with value: ${result.value}")
-        is Result.Error -> println("Error: ${result.message}")
+        is Results.Success -> println("Success with value: ${result.value}")
+        is Results.Error -> println("Error: ${result.message}")
     }
 }

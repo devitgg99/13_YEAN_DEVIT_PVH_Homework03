@@ -7,6 +7,7 @@ import entity.Dog
 import entity.Employee
 import entity.Person
 import entity.Product
+import entity.Results
 import entity.Student
 import entity.countHolidays
 import entity.processResult
@@ -37,10 +38,8 @@ fun main(){
     println("Copy Product ${copyProduct}")
 
     // Kotlin Sealed Classes
-//    val success = Result.success(42)
-//    val error = Result.Error("Something went wrong")
-//    processResult(success)
-//    processResult(error)
+    processResult(Results.Success(42))
+    processResult(Results.Error("Something went wrong"))
 
     // Enum Classes
     val days = listOf(Day.MONDAY, Day.SATURDAY, Day.SUNDAY, Day.WEDNESDAY)
