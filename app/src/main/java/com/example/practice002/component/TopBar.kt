@@ -158,7 +158,9 @@ fun TopBarCustom(modifier: Modifier, currentRoute: String?, navHost: NavHostCont
             onDismissRequest = { showSheet = false },
             sheetState = sheetState,
             dragHandle = {
-                DragHandle()
+                DragHandle(showSheet){
+                    showSheet = false
+                }
             },
         ) {
             val checkedStates = remember {
@@ -167,7 +169,6 @@ fun TopBarCustom(modifier: Modifier, currentRoute: String?, navHost: NavHostCont
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(LocalConfiguration.current.screenHeightDp.dp / 2)
                     .padding(20.dp),
                 horizontalAlignment = Alignment.Start
             ) {
@@ -206,8 +207,8 @@ fun TopBarCustom(modifier: Modifier, currentRoute: String?, navHost: NavHostCont
                                 color = if (isChecked) GreenCustom else Color.Black,
                             )
                         }
+                        Spacer(modifier = Modifier.height(20.dp))
                     }
-                    Spacer(modifier = Modifier.height(20.dp))
                 }
 
             }
@@ -216,7 +217,7 @@ fun TopBarCustom(modifier: Modifier, currentRoute: String?, navHost: NavHostCont
 }
 
 @Composable
-fun DragHandle(){
+fun DragHandle(showSheet: Boolean, onClick:(Boolean)->Unit = {}){
     Row (modifier = Modifier.fillMaxWidth().height(60.dp).padding(horizontal = 20.dp),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
@@ -227,6 +228,9 @@ fun DragHandle(){
             modifier = Modifier
                 .width(20.dp)
                 .height(20.dp)
+                .clickable{
+                    onClick(showSheet)
+                }
         )
         Text(
             text = "Filters",
@@ -236,6 +240,5 @@ fun DragHandle(){
             modifier = Modifier.fillMaxWidth().padding(end = 20.dp),
             textAlign = TextAlign.Center
         )
-
     }
 }

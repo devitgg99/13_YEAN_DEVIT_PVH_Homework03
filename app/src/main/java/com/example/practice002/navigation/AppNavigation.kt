@@ -19,6 +19,7 @@ import com.example.practice002.screens.FavoriteScreen
 import com.example.practice002.screens.HomeScreen
 import com.example.practice002.screens.MyCartScreen
 import com.example.practice002.screens.OnBordingScreen
+import com.example.practice002.screens.ProfileScreen
 
 @Composable
 fun AppNavigation() {
@@ -74,6 +75,9 @@ fun AppNavigation() {
             }
             composable(Screen.BeverageScreen.route) {
                 BeverageScreen(currentRoute)
+            }
+            composable(Screen.ProfileScreen.route) {
+                ProfileScreen()
             }
         }
     }

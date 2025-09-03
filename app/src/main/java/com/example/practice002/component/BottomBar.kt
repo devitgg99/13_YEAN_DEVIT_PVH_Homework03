@@ -36,7 +36,7 @@ fun BottomBar(modifier: Modifier, navHost: NavHostController) {
         "Explore" to R.drawable.explore,
         "Cart" to R.drawable.cart,
         "Favorite" to R.drawable.favorite,
-        "Account" to R.drawable.profile
+        "Account" to R.drawable.profiles
     )
     val navBackStackEntry by navHost.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
@@ -62,7 +62,7 @@ fun BottomBar(modifier: Modifier, navHost: NavHostController) {
                     1 -> currentRoute == Screen.ExploreScreen.route
                     2 -> currentRoute == Screen.MyCartScreen.route
                     3 -> currentRoute == Screen.FavoriteScreen.route
-                    4 -> currentRoute == "account"
+                    4 -> currentRoute == Screen.ProfileScreen.route
                     else -> false
                 }
 
@@ -76,7 +76,7 @@ fun BottomBar(modifier: Modifier, navHost: NavHostController) {
                             1 -> navHost.navigate(Screen.ExploreScreen.route)
                             2 -> navHost.navigate(Screen.MyCartScreen.route)
                             3 -> navHost.navigate(Screen.FavoriteScreen.route)
-                            4 -> navHost.navigate("account")
+                            4 -> navHost.navigate(Screen.ProfileScreen.route)
                         }
                     },
                     horizontalAlignment = Alignment.CenterHorizontally
