@@ -1,6 +1,5 @@
 package com.example.practice002.navigation
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Scaffold
@@ -52,7 +51,7 @@ fun AppNavigation() {
     ) {innerPadding ->
         NavHost(
             navController = navHost,
-            startDestination = Screen.HomeScreen.route,
+            startDestination = Screen.BeverageScreen.route,
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.OnBoardingScreen.route) {
