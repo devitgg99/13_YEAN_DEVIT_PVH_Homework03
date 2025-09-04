@@ -25,7 +25,6 @@ fun ExploreScreen(navHost: NavHostController){
             items(10) {
                 ExploreCard(navHost)
             }
-
         }
     }
 }

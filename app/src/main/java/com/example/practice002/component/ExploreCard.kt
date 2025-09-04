@@ -30,7 +30,7 @@ import com.example.practice002.ui.theme.Rubik
 
 @Composable
 fun ExploreCard(navHost: NavHostController){
-    Card(modifier = Modifier.fillMaxWidth(0.5f).height(250.dp).padding(horizontal = 10.dp, vertical = 10.dp),
+    Card(modifier = Modifier.fillMaxWidth(0.5f).height(230.dp).padding(horizontal = 10.dp, vertical = 10.dp),
         shape = ShapeDefaults.ExtraLarge,
         colors = CardDefaults.cardColors(
             containerColor = GreenCustom.copy(0.2f)

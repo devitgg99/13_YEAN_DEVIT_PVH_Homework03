@@ -9,4 +9,5 @@ sealed class Screen(val route:String){
     object FavoriteScreen:Screen("favorite_screen")
     object BeverageScreen:Screen("beverage_screen")
     object ProfileScreen:Screen("profile_screen")
+    object OrderAcceptScreen:Screen("orderAccept_screen")
 }
